@@ -1,0 +1,11 @@
+{
+    "decoder_first_chunk_size": 20,
+    "decoder_chunk_size": 40,
+    "decoder_chunk_overlap_size": 10,
+    "decoder_top_k": 2,
+    "decoder_penalty_window_size": -1,
+    "decoder_penalty": 1.1,
+    "decoder_N": 2401,
+    "decoder_seg_threshold_first_pack": 0.1,
+    "decoder_seg_threshold": 0.015
+}

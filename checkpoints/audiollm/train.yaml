@@ -1,0 +1,125 @@
+accum_grad: 1
+cmvn_file: 
+dataset_conf:
+  batch_conf:
+    batch_size: 4
+    batch_type: chat
+  fbank_conf:
+    chunk_size: 4
+    dither: 0.0
+    frame_length: 25
+    frame_shift: 10
+    num_mel_bins: 80
+    pad_rate: 0.1
+  filter_conf:
+    max_length: 2000
+    max_output_input_ratio: 102400
+    max_total_num: 1000
+    min_length: 10
+    min_output_input_ratio: 0
+    token_max_length: 102400
+    token_min_length: 0
+  parse_multi_rounds: true
+  resample_conf:
+    resample_rate: 16000
+  shuf_list: true
+  shuffle: false
+  sort: false
+  spec_aug: true
+  spec_aug_conf:
+    max_f: 10
+    max_t: 20
+    num_f_mask: 1
+    num_t_mask: 1
+  spec_sub: false
+  spec_sub_conf:
+    max_t: 30
+    num_t_sub: 3
+  speed_perturb: false
+  split_num: 1
+  tokenize_char: false
+  tokenize_conf:
+    eod_id: 151645
+  tokenize_type: Qwen
+  tokenizer_path: 
+ds_dtype: bf16
+encoder_conf:
+  overview_conf:
+    encoder-input-dim: 80
+    encoder-layer-config: subsampling-transformer
+    encoder-output-dim: 1024
+  para_conf:
+    subsampling:
+      subsampling-dropout-rate: 0.1
+      subsampling-input-dim: 80
+      subsampling-output-dim: 1024
+      subsampling-rate: 4
+    transformer:
+      transformer-attention-dim: 1024
+      transformer-attention-dropout-rate: 0.0
+      transformer-attention-heads: 16
+      transformer-chunk_size: 4
+      transformer-concat-after: false
+      transformer-dropout-rate: 0.1
+      transformer-dynamic-chunks: false
+      transformer-input-dim: 1024
+      transformer-input-layer: linear
+      transformer-left_chunks: 16
+      transformer-linear-units: 4096
+      transformer-normalize-before: true
+      transformer-num-blocks: 24
+      transformer-output-dim: 1024
+      transformer-pos-enc-class: rel-enc
+      transformer-positional-dropout-rate: 0.1
+      transformer-positionwise-layer-type: linear
+grad_clip: 5.0
+input_dim: 80
+is_json_cmvn: true
+lang_dict: 
+lfmmi_dir: ''
+log_interval: 100
+max_epoch: 100
+model_conf:
+  activation_func: gelu
+  add_audio_bos_eos: true
+  add_prompt_before: true
+  adpter_type: subsampling
+  chat_template: '<|im_start|>system
+
+    You are a helpful assistant.<|im_end|>
+
+    <|im_start|>user
+
+    <audio><|im_end|>
+
+    <|im_start|>assistant
+
+    '
+  chunk_size: 2
+  enc_out_dim: 1024
+  freeze_adpter: true
+  freeze_encoder: true
+  freeze_llm: true
+  kernel_size: 5
+  llm_embed_dim: 3584
+  llm_head_num: 28
+  llm_path: 
+  norm: layer
+  num_key_value_heads: 4
+  predict_usr_state: 4
+  prompt_finetune: true
+  prompt_num: 25
+  task_num: 20
+  task_type: prompt_finetune
+optim: adamw
+optim_conf:
+  betas:
+  - 0.9
+  - 0.99
+  eps: 1.0e-06
+  lr: 0.0006
+  weight_decay: 0.01
+output_dim: 5538
+scheduler: warmuplr
+scheduler_conf:
+  warmup_steps: 200
