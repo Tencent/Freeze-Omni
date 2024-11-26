@@ -1,6 +1,7 @@
 # Freeze-Omni: A Smart and Low Latency Speech-to-speech Dialogue Model with Frozen LLM
 
 
+
 <p align="center">
     <img src="./assets/logo.png" width="70%" height="70%">
 </p>
